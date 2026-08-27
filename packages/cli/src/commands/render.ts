@@ -12,22 +12,22 @@ export async function renderCommand(options: RenderOptions = {}): Promise<void> 
   console.log(`🎬 Rendering production video to ${outFile}...`);
 
   try {
-    execSync(`npx remotion render src/Root.tsx MainPromo ${outFile}`, {
+    execSync(`npx remotion render src/index.ts MainPromo ${outFile}`, {
       stdio: 'inherit',
     });
     console.log(`✅ Video rendered successfully: ${outFile}`);
   } catch {
-    console.log(`ℹ️ To render directly via Remotion studio: npx remotion render src/Root.tsx MainPromo ${outFile}`);
+    console.log(`ℹ️ To render directly via Remotion studio: npx remotion render src/index.ts MainPromo ${outFile}`);
   }
 }
 
 export async function previewCommand(): Promise<void> {
   console.log(`🚀 Starting Remotion Motion Studio Preview...`);
   try {
-    execSync(`npx remotion preview src/Root.tsx`, {
+    execSync(`npx remotion preview src/index.ts`, {
       stdio: 'inherit',
     });
   } catch {
-    console.log(`ℹ️ Run 'npx remotion preview src/Root.tsx' to launch the studio preview.`);
+    console.log(`ℹ️ Run 'npx remotion preview src/index.ts' to launch the studio preview.`);
   }
 }

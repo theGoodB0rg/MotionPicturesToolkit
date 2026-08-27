@@ -4,8 +4,8 @@
   "private": true,
   "description": "Showcase SaaS product promo video composition powered by MotionPicturesToolkit",
   "scripts": {
-    "preview": "remotion preview src/Root.tsx",
-    "render": "remotion render src/Root.tsx MainPromo out/promo.mp4",
+    "preview": "remotion preview src/index.ts",
+    "render": "remotion render src/index.ts MainPromo out/promo.mp4",
     "audio:generate": "motion-pictures audio:generate --text 'Transform your codebase into cinematic marketing videos with MotionPicturesToolkit.' --output assets/audio",
     "build": "tsc -p tsconfig.json"
   },

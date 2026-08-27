@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCurrentFrame, useVideoConfig } from 'remotion';
+import { useCurrentFrame, useVideoConfig, Audio, staticFile } from 'remotion';
 import {
   CinematicCanvas,
   SceneSequence,
@@ -13,22 +13,12 @@ import {
   BentoGrid,
   SpotlightOverlay,
 } from '@motion-pictures/motion';
-import { KineticSubtitles, WordTimestamp } from '@motion-pictures/audio';
-import { DemoDashboardUI } from '../components/DemoDashboardUI.js';
-import storyboard from '../../storyboard.js';
+import { KineticSubtitles, calculateDuckingVolume, WordTimestamp } from '@motion-pictures/audio';
+import { DemoDashboardUI } from '../components/DemoDashboardUI';
+import storyboard from '../../storyboard';
+import timestampsData from '../../public/audio/voiceover_timestamps.json';
 
-// Pre-computed Edge-TTS word boundary tokens for demo timeline
-const DEMO_WORD_TIMESTAMPS: WordTimestamp[] = [
-  { word: 'Transform', startMs: 200, endMs: 700 },
-  { word: 'your', startMs: 720, endMs: 900 },
-  { word: 'codebase', startMs: 920, endMs: 1450 },
-  { word: 'into', startMs: 1480, endMs: 1750 },
-  { word: 'cinematic', startMs: 1780, endMs: 2300 },
-  { word: 'marketing', startMs: 2320, endMs: 2850 },
-  { word: 'videos', startMs: 2880, endMs: 3300 },
-  { word: 'with', startMs: 3320, endMs: 3550 },
-  { word: 'MotionPicturesToolkit.', startMs: 3580, endMs: 4800 },
-];
+const MASTER_WORDS: WordTimestamp[] = timestampsData.words;
 
 export const MainPromo: React.FC = () => {
   const frame = useCurrentFrame();
@@ -44,11 +34,25 @@ export const MainPromo: React.FC = () => {
   const s3Frames = Math.round(scene3.durationSeconds * fps);
   const s4Frames = Math.round(scene4.durationSeconds * fps);
 
-  // Active scene index
+  // Active scene camera
   let activeCamera = undefined;
   if (frame >= s1Frames && frame < s1Frames + s2Frames && scene2.type === 'app-demo') {
     activeCamera = scene2.camera;
   }
+
+  // Dynamic Audio Ducking Calculation
+  const duckingVolume = calculateDuckingVolume({
+    frame,
+    fps,
+    speechSegments: [
+      { startFrame: 0, durationFrames: s1Frames + s2Frames + s3Frames + s4Frames },
+    ],
+    duckingOptions: {
+      baseVolume: 0.65,
+      duckedVolume: 0.18,
+      rampFrames: 15,
+    },
+  });
 
   return (
     <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'hidden' }}>
@@ -110,14 +114,14 @@ export const MainPromo: React.FC = () => {
             <PillCallout
               text="Instant Telemetry Capture"
               atFrame={60}
-              durationFrames={180}
+              durationFrames={220}
               position="top-left"
               accentColor="#6366F1"
             />
             <PillCallout
               text="Sub-Pixel Smooth Zoom"
-              atFrame={160}
-              durationFrames={180}
+              atFrame={180}
+              durationFrames={220}
               position="bottom-right"
               accentColor="#EC4899"
             />
@@ -125,18 +129,18 @@ export const MainPromo: React.FC = () => {
             {/* Screen Studio Smooth Cursor */}
             <CursorPointer
               waypoints={[
-                { atFrame: 20, x: 400, y: 700 },
-                { atFrame: 80, x: 1100, y: 350, click: true },
-                { atFrame: 180, x: 800, y: 550, click: true },
-                { atFrame: 260, x: 960, y: 450 },
+                { atFrame: 30, x: 400, y: 700 },
+                { atFrame: 100, x: 1100, y: 350, click: true },
+                { atFrame: 220, x: 800, y: 550, click: true },
+                { atFrame: 320, x: 960, y: 450 },
               ]}
             />
 
             {/* Spotlight Focus on Analytics */}
             <SpotlightOverlay
               active={true}
-              atFrame={75}
-              durationFrames={100}
+              atFrame={90}
+              durationFrames={140}
               focusArea={{ x: 65, y: 40, radius: 280 }}
             />
           </div>
@@ -227,13 +231,19 @@ export const MainPromo: React.FC = () => {
         </SceneSequence>
       </CinematicCanvas>
 
-      {/* Kinetic Subtitles Synchronized with Edge-TTS */}
+      {/* Kinetic Karaoke Subtitles Synchronized with Edge-TTS */}
       <KineticSubtitles
-        words={DEMO_WORD_TIMESTAMPS}
-        startFrame={10}
+        words={MASTER_WORDS}
+        startFrame={0}
         preset="karaoke-glow"
         highlightColor="#6366F1"
       />
+
+      {/* Neural Voiceover Audio Track */}
+      <Audio src={staticFile('audio/voiceover.mp3')} volume={1.0} />
+
+      {/* Background Synthwave Soundtrack with Dynamic Ducking */}
+      <Audio src={staticFile('audio/music.wav')} volume={duckingVolume} />
     </div>
   );
 };

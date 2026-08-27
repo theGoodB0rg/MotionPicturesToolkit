@@ -1,8 +1,8 @@
 import React from 'react';
 import { Composition } from 'remotion';
-import { MainPromo } from './compositions/MainPromo.js';
-import config from '../motion.config.js';
-import storyboard from '../storyboard.js';
+import { MainPromo } from './compositions/MainPromo';
+import config from '../motion.config';
+import storyboard from '../storyboard';
 
 export const RemotionRoot: React.FC = () => {
   const totalDurationSeconds = storyboard.scenes.reduce(

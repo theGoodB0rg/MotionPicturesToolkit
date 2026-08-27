@@ -1,0 +1,307 @@
+{
+  "voice": "en-US-ChristopherNeural",
+  "durationMs": 29613,
+  "wordsCount": 60,
+  "words": [
+    {
+      "word": "Stop",
+      "startMs": 100,
+      "endMs": 538
+    },
+    {
+      "word": "spending",
+      "startMs": 550,
+      "endMs": 963
+    },
+    {
+      "word": "weeks",
+      "startMs": 975,
+      "endMs": 1288
+    },
+    {
+      "word": "manually",
+      "startMs": 1300,
+      "endMs": 1813
+    },
+    {
+      "word": "editing",
+      "startMs": 1825,
+      "endMs": 2213
+    },
+    {
+      "word": "product",
+      "startMs": 2225,
+      "endMs": 2625
+    },
+    {
+      "word": "videos",
+      "startMs": 2638,
+      "endMs": 3350
+    },
+    {
+      "word": "Transform",
+      "startMs": 4213,
+      "endMs": 4825
+    },
+    {
+      "word": "your",
+      "startMs": 4838,
+      "endMs": 4988
+    },
+    {
+      "word": "codebase",
+      "startMs": 5000,
+      "endMs": 5588
+    },
+    {
+      "word": "into",
+      "startMs": 5600,
+      "endMs": 5813
+    },
+    {
+      "word": "marketing",
+      "startMs": 5825,
+      "endMs": 6288
+    },
+    {
+      "word": "cinema",
+      "startMs": 6300,
+      "endMs": 6825
+    },
+    {
+      "word": "MotionPicturesToolkit",
+      "startMs": 7688,
+      "endMs": 8938
+    },
+    {
+      "word": "automatically",
+      "startMs": 8950,
+      "endMs": 9588
+    },
+    {
+      "word": "captures",
+      "startMs": 9600,
+      "endMs": 10075
+    },
+    {
+      "word": "your",
+      "startMs": 10088,
+      "endMs": 10275
+    },
+    {
+      "word": "app",
+      "startMs": 10288,
+      "endMs": 10550
+    },
+    {
+      "word": "adds",
+      "startMs": 10813,
+      "endMs": 11063
+    },
+    {
+      "word": "smooth",
+      "startMs": 11075,
+      "endMs": 11425
+    },
+    {
+      "word": "camera",
+      "startMs": 11438,
+      "endMs": 11813
+    },
+    {
+      "word": "zooms",
+      "startMs": 11825,
+      "endMs": 12313
+    },
+    {
+      "word": "and",
+      "startMs": 12563,
+      "endMs": 12738
+    },
+    {
+      "word": "wraps",
+      "startMs": 12750,
+      "endMs": 13050
+    },
+    {
+      "word": "screens",
+      "startMs": 13063,
+      "endMs": 13450
+    },
+    {
+      "word": "in",
+      "startMs": 13463,
+      "endMs": 13588
+    },
+    {
+      "word": "photorealistic",
+      "startMs": 13600,
+      "endMs": 14500
+    },
+    {
+      "word": "3D",
+      "startMs": 14513,
+      "endMs": 14975
+    },
+    {
+      "word": "device",
+      "startMs": 14988,
+      "endMs": 15375
+    },
+    {
+      "word": "frames",
+      "startMs": 15388,
+      "endMs": 15988
+    },
+    {
+      "word": "Powered",
+      "startMs": 16850,
+      "endMs": 17250
+    },
+    {
+      "word": "by",
+      "startMs": 17263,
+      "endMs": 17413
+    },
+    {
+      "word": "zero-cost",
+      "startMs": 17425,
+      "endMs": 18150
+    },
+    {
+      "word": "neural",
+      "startMs": 18163,
+      "endMs": 18475
+    },
+    {
+      "word": "voiceovers",
+      "startMs": 18488,
+      "endMs": 19225
+    },
+    {
+      "word": "Three",
+      "startMs": 19463,
+      "endMs": 19788
+    },
+    {
+      "word": ".",
+      "startMs": 19800,
+      "endMs": 20038
+    },
+    {
+      "word": "js",
+      "startMs": 20050,
+      "endMs": 20488
+    },
+    {
+      "word": "mockups",
+      "startMs": 20500,
+      "endMs": 21063
+    },
+    {
+      "word": "and",
+      "startMs": 21275,
+      "endMs": 21413
+    },
+    {
+      "word": "the",
+      "startMs": 21425,
+      "endMs": 21488
+    },
+    {
+      "word": "Virtual",
+      "startMs": 21500,
+      "endMs": 21950
+    },
+    {
+      "word": "Director",
+      "startMs": 21963,
+      "endMs": 22413
+    },
+    {
+      "word": "engine",
+      "startMs": 22425,
+      "endMs": 22875
+    },
+    {
+      "word": "Run",
+      "startMs": 23738,
+      "endMs": 24063
+    },
+    {
+      "word": "npx",
+      "startMs": 24075,
+      "endMs": 24688
+    },
+    {
+      "word": "motion-pictures",
+      "startMs": 24700,
+      "endMs": 25500
+    },
+    {
+      "word": "init",
+      "startMs": 25513,
+      "endMs": 25825
+    },
+    {
+      "word": "in",
+      "startMs": 25838,
+      "endMs": 25950
+    },
+    {
+      "word": "your",
+      "startMs": 25963,
+      "endMs": 26088
+    },
+    {
+      "word": "repository",
+      "startMs": 26100,
+      "endMs": 26850
+    },
+    {
+      "word": "today",
+      "startMs": 26863,
+      "endMs": 27288
+    },
+    {
+      "word": "and",
+      "startMs": 27300,
+      "endMs": 27463
+    },
+    {
+      "word": "launch",
+      "startMs": 27475,
+      "endMs": 27750
+    },
+    {
+      "word": "your",
+      "startMs": 27763,
+      "endMs": 27863
+    },
+    {
+      "word": "next",
+      "startMs": 27875,
+      "endMs": 28163
+    },
+    {
+      "word": "product",
+      "startMs": 28175,
+      "endMs": 28513
+    },
+    {
+      "word": "video",
+      "startMs": 28525,
+      "endMs": 28900
+    },
+    {
+      "word": "in",
+      "startMs": 28913,
+      "endMs": 29038
+    },
+    {
+      "word": "style",
+      "startMs": 29050,
+      "endMs": 29613
+    }
+  ]
+}
