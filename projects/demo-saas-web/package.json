@@ -1,0 +1,29 @@
+{
+  "name": "demo-saas-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Showcase SaaS product promo video composition powered by MotionPicturesToolkit",
+  "scripts": {
+    "preview": "remotion preview src/Root.tsx",
+    "render": "remotion render src/Root.tsx MainPromo out/promo.mp4",
+    "audio:generate": "motion-pictures audio:generate --text 'Transform your codebase into cinematic marketing videos with MotionPicturesToolkit.' --output assets/audio",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@motion-pictures/audio": "workspace:*",
+    "@motion-pictures/capture": "workspace:*",
+    "@motion-pictures/cli": "workspace:*",
+    "@motion-pictures/core": "workspace:*",
+    "@motion-pictures/mockups": "workspace:*",
+    "@motion-pictures/motion": "workspace:*",
+    "remotion": "^4.0.245"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.245",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2"
+  }
+}

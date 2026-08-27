@@ -1,0 +1,92 @@
+{
+  "voice": "en-US-ChristopherNeural",
+  "durationMs": 10388,
+  "wordsCount": 17,
+  "words": [
+    {
+      "word": "Transform",
+      "startMs": 100,
+      "endMs": 700
+    },
+    {
+      "word": "your",
+      "startMs": 713,
+      "endMs": 863
+    },
+    {
+      "word": "codebase",
+      "startMs": 875,
+      "endMs": 1450
+    },
+    {
+      "word": "into",
+      "startMs": 1463,
+      "endMs": 1700
+    },
+    {
+      "word": "cinema",
+      "startMs": 1713,
+      "endMs": 2188
+    },
+    {
+      "word": "with",
+      "startMs": 2200,
+      "endMs": 2375
+    },
+    {
+      "word": "MotionPicturesToolkit",
+      "startMs": 2388,
+      "endMs": 3688
+    },
+    {
+      "word": "Automated",
+      "startMs": 4550,
+      "endMs": 5150
+    },
+    {
+      "word": "screen",
+      "startMs": 5163,
+      "endMs": 5575
+    },
+    {
+      "word": "capture",
+      "startMs": 5588,
+      "endMs": 6113
+    },
+    {
+      "word": "dynamic",
+      "startMs": 6363,
+      "endMs": 6888
+    },
+    {
+      "word": "camera",
+      "startMs": 6900,
+      "endMs": 7263
+    },
+    {
+      "word": "choreography",
+      "startMs": 7275,
+      "endMs": 8163
+    },
+    {
+      "word": "and",
+      "startMs": 8388,
+      "endMs": 8550
+    },
+    {
+      "word": "zero-cost",
+      "startMs": 8563,
+      "endMs": 9263
+    },
+    {
+      "word": "neural",
+      "startMs": 9275,
+      "endMs": 9550
+    },
+    {
+      "word": "voiceovers",
+      "startMs": 9563,
+      "endMs": 10388
+    }
+  ]
+}

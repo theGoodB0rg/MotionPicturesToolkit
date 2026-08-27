@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": true
+  },
+  "include": [
+    "packages/*/src/**/*",
+    "projects/*/src/**/*",
+    "projects/*/motion.config.ts",
+    "projects/*/storyboard.ts"
+  ]
+}

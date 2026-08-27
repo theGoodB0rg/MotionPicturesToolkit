@@ -1,0 +1,34 @@
+{
+  "name": "@motion-pictures/cli",
+  "version": "1.0.0",
+  "description": "Developer CLI for MotionPicturesToolkit to init, record, preview, synthesize audio, and render promo videos",
+  "bin": {
+    "motion-pictures": "./dist/bin.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@motion-pictures/audio": "workspace:*",
+    "@motion-pictures/capture": "workspace:*",
+    "@motion-pictures/core": "workspace:*",
+    "@motion-pictures/mockups": "workspace:*",
+    "@motion-pictures/motion": "workspace:*",
+    "commander": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

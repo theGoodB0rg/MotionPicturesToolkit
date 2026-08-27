@@ -1,0 +1,22 @@
+{
+  "name": "motion-pictures-toolkit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scalable, modular, programmatic motion graphics & promo video pipeline for web and mobile apps",
+  "author": "MotionPicturesToolkit Contributors",
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm -r --filter=./packages/* run build",
+    "dev": "pnpm --filter demo-saas-web preview",
+    "preview": "pnpm --filter demo-saas-web preview",
+    "render": "pnpm --filter demo-saas-web render",
+    "lint": "pnpm -r run lint",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.7.2"
+  }
+}

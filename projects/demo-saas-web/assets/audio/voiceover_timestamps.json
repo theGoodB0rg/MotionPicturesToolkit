@@ -1,0 +1,47 @@
+[
+  {
+    "word": "Welcome",
+    "startMs": 100,
+    "endMs": 550
+  },
+  {
+    "word": "to",
+    "startMs": 563,
+    "endMs": 663
+  },
+  {
+    "word": "MotionPicturesToolkit",
+    "startMs": 675,
+    "endMs": 2025
+  },
+  {
+    "word": "Transform",
+    "startMs": 2888,
+    "endMs": 3500
+  },
+  {
+    "word": "your",
+    "startMs": 3513,
+    "endMs": 3663
+  },
+  {
+    "word": "codebase",
+    "startMs": 3675,
+    "endMs": 4263
+  },
+  {
+    "word": "into",
+    "startMs": 4275,
+    "endMs": 4488
+  },
+  {
+    "word": "marketing",
+    "startMs": 4500,
+    "endMs": 4963
+  },
+  {
+    "word": "cinema",
+    "startMs": 4975,
+    "endMs": 5500
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "name": "@motion-pictures/capture",
+  "version": "1.0.0",
+  "description": "Playwright CDP screen recorder, interaction telemetry harvester, and mobile event bridge for MotionPicturesToolkit",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@motion-pictures/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@playwright/test": "^1.40.0 || ^1.49.0"
+  },
+  "peerDependenciesMeta": {
+    "@playwright/test": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
