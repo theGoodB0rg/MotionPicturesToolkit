@@ -6,15 +6,12 @@ An open-source, modular, programmatic motion graphics and promo video generation
 
 ## Showcase Demo
 
-https://github.com/user-attachments/assets/7b325ee1-4775-4d0f-8f83-3c99f925f69c
+https://github.com/theGoodB0rg/MotionPicturesToolkit/releases/download/v1.0.0/promo.mp4
 
-<div align="center">
-  <video src="https://github.com/theGoodB0rg/MotionPicturesToolkit/raw/main/assets/demo/promo.mp4" controls="controls" width="100%">
-    <source src="https://github.com/theGoodB0rg/MotionPicturesToolkit/raw/main/assets/demo/promo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <p><em>30-second automated product demo featuring zero-cost neural voiceover, millisecond-accurate kinetic karaoke subtitles, 3D MacBook Pro mockup, and dynamic audio ducking.</em></p>
-</div>
+<video src="https://github.com/theGoodB0rg/MotionPicturesToolkit/releases/download/v1.0.0/promo.mp4" controls="controls" width="100%">
+</video>
+
+*30-second automated product demo featuring zero-cost neural voiceover, millisecond-accurate kinetic karaoke subtitles, 3D MacBook Pro mockup, and dynamic audio ducking.*
 
 ---
 
