@@ -1,89 +1,177 @@
-# 🎬 MotionPicturesToolkit
+# MotionPicturesToolkit
 
-> **Scalable, modular, programmatic motion graphics & promo video engine for web and mobile apps.**
-
-`MotionPicturesToolkit` enables developers, product teams, and founders to convert live codebases and interaction flows into marketing-grade, user-acquisition (UA) worthy 4K promo videos with zero manual editing.
+An open-source, modular, programmatic motion graphics and promo video generation engine. Built on Remotion, Playwright, React Three Fiber, and Edge-TTS, MotionPicturesToolkit automates the production of high-converting, marketing-grade product videos directly from web and mobile codebases.
 
 ---
 
-## ✨ Features at a Glance
+## Showcase Demo
 
-- 🚀 **Automated UI Harvester**: Record live web apps (via Playwright CDP) and mobile apps (iOS/Android) at 60fps with sub-pixel coordinate tracking.
-- 🎥 **Virtual Director (Screen Studio Effect)**: Smooths jittery mouse cursors, auto-zooms into active UI hot spots, and adds cinematic camera inertia.
-- 📱 **3D & 2.5D Device Frames**: Photorealistic & Clay 3D mockups (iPhone 16 Pro, MacBook Pro 16", iPad Pro M4, Browser Windows) powered by Three.js / React Three Fiber.
-- 🔤 **Kinetic Typography & Badges**: Stripe/Linear-style staggered text animations, floating glassmorphic callout pills, and animated metric counters.
-- 🎙️ **Synchronized Voiceover & Audio**: Zero-cost, high-quality neural TTS powered by **Edge-TTS** (plus optional ElevenLabs / OpenAI), millisecond word-level karaoke subtitles, procedural sound effects (SFX), and automatic background music ducking.
-- 📦 **Multi-Project Workspace**: Isolated project directories with dedicated asset pipelines, structured JSON telemetry logs, and render diagnostics.
-- ⚡ **Headless CI/CD Rendering**: Render deterministic 4K 60fps MP4/ProRes videos locally or in cloud CI pipelines (GitHub Actions, AWS Lambda).
+https://github.com/user-attachments/assets/7b325ee1-4775-4d0f-8f83-3c99f925f69c
+
+<div align="center">
+  <video src="https://github.com/theGoodB0rg/MotionPicturesToolkit/raw/main/assets/demo/promo.mp4" controls="controls" width="100%">
+    <source src="https://github.com/theGoodB0rg/MotionPicturesToolkit/raw/main/assets/demo/promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p><em>30-second automated product demo featuring zero-cost neural voiceover, millisecond-accurate kinetic karaoke subtitles, 3D MacBook Pro mockup, and dynamic audio ducking.</em></p>
+</div>
 
 ---
 
-## 🏗️ Architecture
+## Core Capabilities
+
+- **Deterministic UI Ingestion**: Automate interaction recording from web apps via Playwright CDP and mobile applications via emulator bridges with sub-pixel coordinate logging.
+- **Virtual Director Camera Engine**: Interpolate raw cursor and viewport inputs into smooth spring-eased trajectories with automatic focal framing, 3D rotational inertia, and spotlight dimming.
+- **3D & 2.5D Device Mockups**: Photorealistic and clay hardware models (iPhone 16 Pro, MacBook Pro 16", Safari/Chrome browser chromes) powered by Three.js and `@remotion/three`.
+- **Kinetic Typography & Marketing Components**: Stripe- and Linear-style staggered letter reveals, blur-to-focus titles, glassmorphic floating callout pills, and responsive Bento grids.
+- **Synchronized Audio & Voice Pipeline**: Zero-cost, high-fidelity neural speech synthesis via Edge-TTS with sub-millisecond word boundary extraction, procedural sound effects (SFX), and automatic background music ducking (-14 dB).
+- **Multi-Project Isolation**: Structured workspaces with dedicated configuration files (`motion.config.ts`), declarative storyboards (`storyboard.ts`), asset pipelines, and structured JSON telemetry logs.
+- **Headless CI/CD Rendering**: Deterministic multi-core parallel rendering to 4K 60fps MP4, WebM, or ProRes locally and within GitHub Actions pipelines.
+
+---
+
+## System Architecture
 
 ```mermaid
 graph LR
-    A[Live App / Codebase] -->|Playwright / Maestro| B[Capture Engine]
-    B --> C[Motion & Camera Choreography]
-    D[TTS / Voiceover Script] --> E[Audio & Word-Sync Engine]
+    A[Target Application / Codebase] -->|Playwright CDP & Telemetry| B[Capture Engine]
+    B --> C[Virtual Director & Camera Easing]
+    D[Voiceover Script] -->|Edge-TTS & Word Sync| E[Audio Engine]
     C & E --> F[Remotion Composition Core]
-    F --> G[Interactive Studio Preview]
+    F --> G[Interactive Preview Studio]
     F --> H[Headless 4K MP4 Render]
 ```
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### 1. Initialize Toolkit in your repo
+### 1. Initialize Toolkit in an Existing Repository
+
 ```bash
 npx @motion-pictures/cli init
 ```
 
-### 2. Record an automated user interaction flow
+This generates `motion.config.ts` and `storyboard.ts` in your project root.
+
+### 2. Record an Automated Interaction Flow
+
 ```bash
 npx @motion-pictures/cli record --url http://localhost:3000
 ```
 
-### 3. Preview in the interactive Studio
+### 3. Synthesize Neural Voiceover & Word Boundaries
+
+```bash
+npx @motion-pictures/cli audio:generate --text "Your marketing script here"
+```
+
+### 4. Preview in Interactive Studio
+
 ```bash
 npx @motion-pictures/cli preview
 ```
 
-### 4. Render master video
+### 5. Render Production Video
+
 ```bash
 npx @motion-pictures/cli render --out ./dist/promo.mp4
 ```
 
 ---
 
-## 📚 Documentation
+## Declarative Storyboard Example
 
-- 📐 **[System Architecture](docs/ARCHITECTURE.md)**: Deep dive into the 5-layer pipeline and monorepo structure.
-- 🗺️ **[Engineering Roadmap](docs/ROADMAP.md)**: Phased milestones from core engine to developer CLI.
-- 🔌 **[Integration Guide](docs/INTEGRATION_GUIDE.md)**: How to integrate the toolkit into existing web and mobile codebases.
-- 📜 **[Storyboard Specification](docs/STORYBOARD_SPEC.md)**: Declarative schema and types for choreographing scenes, mockups, and audio.
+Define scene choreography, camera trajectories, voiceover, and badges in TypeScript:
+
+```typescript
+import { defineStoryboard, Scene } from '@motion-pictures/core';
+
+export default defineStoryboard([
+  Scene.Hook({
+    durationSeconds: 5,
+    title: 'Transform Code into Cinema',
+    subtitle: 'Automated 4K product motion graphics from live application code.',
+    badgeText: 'NextGen Motion Engine',
+    voiceover: 'Stop spending weeks manually editing product videos.',
+    transition: 'fade',
+  }),
+
+  Scene.AppDemo({
+    durationSeconds: 10,
+    device: 'macbook-pro-16',
+    headline: 'Realtime Telemetry & Dynamic Director',
+    camera: {
+      initialZoom: 1.0,
+      moves: [
+        { atFrame: 45, zoom: 1.35, target: 'top-right', duration: 40 },
+        { atFrame: 200, zoom: 1.15, target: 'center', duration: 35 },
+      ],
+    },
+    callouts: [
+      { atFrame: 60, text: 'Instant Telemetry Capture', position: 'top-left' },
+      { atFrame: 180, text: 'Sub-Pixel Smooth Zoom', position: 'bottom-right' },
+    ],
+    voiceover: 'MotionPicturesToolkit automatically records your application and adds smooth camera pans.',
+    transition: 'slide-left',
+  }),
+
+  Scene.CallToAction({
+    durationSeconds: 5,
+    title: 'Start Creating Cinema from Code',
+    ctaButtonText: 'npx motion-pictures init',
+    brandUrl: 'https://motionpictures.dev',
+    voiceover: 'Integrate into your codebase today and launch your next video.',
+    transition: 'fade-through-black',
+  }),
+]);
+```
 
 ---
 
-## 📂 Project Structure
+## Monorepo Packages
 
-```
-MotionPicturesToolkit/
-├── packages/
-│   ├── core/                  # Remotion timeline core, camera physics, easing
-│   ├── capture/               # Playwright web recorder & mobile bridge
-│   ├── mockups/               # 3D & 2.5D device shells (iPhone, Mac, Browser)
-│   ├── motion/                # Kinetic text, particle shaders, spotlights
-│   ├── audio/                 # TTS synthesis, subtitle sync, SFX matrix, ducking
-│   ├── studio/                # Web-based timeline scrubber & inspector
-│   └── cli/                   # Developer CLI
-├── projects/                  # Isolated user projects & assets
-├── docs/                      # Technical specifications & guides
-└── README.md
+| Package | Version | Description |
+| :--- | :--- | :--- |
+| [`@motion-pictures/core`](packages/core) | `1.0.0` | Remotion timeline core, camera coordinate math, spring physics presets, `<CinematicCanvas>`, `<SceneSequence>`, and trace logging. |
+| [`@motion-pictures/mockups`](packages/mockups) | `1.0.0` | 3D & 2.5D device frames: `<SafariBrowserFrame>`, `<MacBookMockup>`, `<IPhone16Mockup>`, and universal `<DeviceContainer>`. |
+| [`@motion-pictures/motion`](packages/motion) | `1.0.0` | Motion graphics library: `<KineticHeadline>`, `<PillCallout>`, `<MeshGradientBackground>`, `<CursorPointer>`, `<BentoGrid>`, and `<SpotlightOverlay>`. |
+| [`@motion-pictures/audio`](packages/audio) | `1.0.0` | Zero-cost Edge-TTS client, native word-boundary extractor, `<KineticSubtitles>` (karaoke highlight), and dynamic audio ducking. |
+| [`@motion-pictures/capture`](packages/capture) | `1.0.0` | Playwright CDP screen harvester, `defineScenario` interaction harness, and telemetry coordinate exporter. |
+| [`@motion-pictures/cli`](packages/cli) | `1.0.0` | Command line interface (`init`, `record`, `preview`, `render`, `audio:generate`). |
+
+---
+
+## Documentation
+
+- [System Architecture](docs/ARCHITECTURE.md): Technical specification of the 5-layer pipeline and data flows.
+- [Engineering Roadmap](docs/ROADMAP.md): Multi-phase development roadmap and milestones.
+- [Integration Guide](docs/INTEGRATION_GUIDE.md): Implementation guide for existing web and mobile repositories.
+- [Storyboard Specification](docs/STORYBOARD_SPEC.md): Complete schema and type definitions for the Storyboard DSL.
+
+---
+
+## Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Build all packages
+pnpm run build
+
+# Typecheck workspace
+pnpm run typecheck
+
+# Preview demo SaaS promo
+pnpm --filter demo-saas-web preview
+
+# Render 1080p 60fps MP4 demo
+pnpm --filter demo-saas-web exec remotion render src/index.ts MainPromo out/promo.mp4 --concurrency=4 --public-dir=public
 ```
 
 ---
 
-## 📄 License
+## License
 
 MIT © MotionPicturesToolkit Contributors

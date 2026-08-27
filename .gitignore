@@ -4,7 +4,6 @@ build/
 .turbo/
 .remotion/
 out/
-*.mp4
 *.webm
 *.prores
 *.mov
@@ -14,3 +13,7 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+
+# Default ignore for renders, but allow the showcase demo asset
+*.mp4
+!assets/demo/promo.mp4
